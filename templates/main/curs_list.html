@@ -1,0 +1,42 @@
+{% extends 'main/base1.html' %}
+{% load static %}
+{% block title %}
+Курсы
+{% endblock %}
+
+{% block content %}
+<div class="container">
+{% for les in curs_list %}
+
+{#<div class="row align-items-md-stretch">#}
+{#<div class="col-md-6">#}
+{#        <div class="h-100 p-5 text-white bg-dark rounded-3">#}
+{#          <h2>{{ les.name }}</h2>#}
+{#          <p>{{ les.info }}</p>#}
+{#          <button onclick="document.location='{% url 'curs_detail' les.id %}?next={{request.path}}'" class="btn btn-outline-light" type="button">Подробнее</button>#}
+{#        </div>#}
+{#</div>#}
+{#</div>#}
+
+
+<div class="row p-4 mb-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1">{{ les.name }}</h1>
+        <p class="lead">{{ les.info }}</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+          <button onclick="document.location='{% url 'curs_detail' les.id %}?next={{request.path}}'" type="button" class="btn btn-outline-dark btn-lg px-4 me-md-2 fw-bold">Подробнее</button>
+        </div>
+      </div>
+      <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+          <img class="rounded-lg-3" style="border-top-left-radius: 10px" src="{{ les.img.url }}" alt="Photo" width="720">
+      </div>
+</div>
+    {% endfor %}
+
+{#<hr>#}
+</div>
+
+
+
+
+{% endblock %}

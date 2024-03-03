@@ -1,0 +1,75 @@
+{% extends 'main/base1.html' %}
+{% load static %}
+{% block title %}
+    О нас
+{% endblock %}
+
+{% block content %}
+
+<div class="container marketing">
+<div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">О нас</h2>
+        <p class="lead">Мы имеем опыт работы с различными вузами и множеством школ. Наши видео-уроки расчитаны на развитие ваших знаний в IT области.
+            Курсы разбиты на разные уровни, чтобы любой человек, вне зависимости от своего возраста и уровня программирования, смог понять их и получить новые знания в доступной форме.</p>
+      </div>
+</div>
+
+<hr>
+
+    <div class="col-md-7">
+        <h3 class="featurette-heading fw-normal lh-1 mt-auto">Наши партнеры</h3>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-lg-4 ">
+        <img class="bd-placeholder-img rounded-circle" width="270" height="140" src="{% static 'icon/kai.png' %}" alt="KАИ">
+        <h2 class="fw-normal m-lg-2">КАИ</h2>
+      </div>
+
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{% static 'icon/kfu.png' %}" alt="КФУ">
+        <h2 class="fw-normal m-lg-2">КФУ</h2>
+      </div>
+
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{% static 'icon/kgu.png' %}" alt="КГЭУ">
+        <h2 class="fw-normal m-lg-2">КГЭУ</h2>
+      </div>
+
+        <div class="col-lg-4 ">
+        <img class="bd-placeholder-img " width="140" height="140" src="{% static 'icon/fond-razvitiya-onlayn-obrazovaniya.jpg' %}" alt="ФРОО">
+        <h2 class="fw-normal m-lg-2">ФРОО</h2>
+      </div>
+
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{% static 'icon/MIFI.png' %}" alt="НИЯУ МИФИ">
+        <h2 class="fw-normal m-lg-2">МИФИ</h2>
+      </div>
+
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{% static 'icon/Mail.png' %}" alt="MAIL">
+        <h2 class="fw-normal m-lg-2">MAIL.RU</h2>
+      </div>
+
+    </div>
+
+<hr>
+
+<div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1 mt-auto">Контакты</h2>
+        <p class="lead"> Для связи с нами вы можете обратиться на
+        электронную почту <i>support@школа-ит.рф</i></p>
+        <p class="lead">Мы работаем с крупнейшим банком Тинькофф. Все платежи мы проводит только через него. Если вас, по какой-то причине, не устроил видео курс, вы всегда можете обратиться к нам на электронную почту с просьбой возврата денежных средств.
+        В самые кратчайшие сроки мы разберемся в ситуации, свяжемся с вами и вернем вам ваши деньги.</p>
+          <p class="lead" style="font-size: 11pt">ИНН: 121605223970<br>ОГРН: 322120000023261</p>
+      </div>
+      <div class="col-md-5 mt-1">
+        <img class="bd-placeholder-img bd-placeholder-img-lg img-fluid mt-lg-5" style="margin-left: 150px" width="150" height="150" src="{% static 'icon/tnk.png' %}" alt="Тинькофф">
+      </div>
+</div>
+
+</div>
+
+{% endblock %}

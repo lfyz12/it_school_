@@ -1,0 +1,14 @@
+{% extends "main/base1.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    <center>
+    <hr class="featurette-divider">
+       <div class="container">
+            <h1 class="h3 mb-3 fw-normal">Добро пожаловать! {{ new_user.first_name }}!</h1>
+            <p class="font-weight-bold">Ваш аккаунт успешно создан. Вам нужно <a href="{% url "login" %}" class="link-success">войти</a>.</p>
+       </div>
+    <hr class="featurette-divider">
+    </center>
+{% endblock %}

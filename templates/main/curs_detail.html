@@ -1,0 +1,45 @@
+{% extends 'main/base1.html' %}
+
+{% block title %}
+{{ curs.name }}
+{% endblock %}
+
+{% block content %}
+
+<div class="container p-2 bd-cheatsheet bg-body">
+<hr>
+<div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">{{ curs.name }}</h2>
+        <p class="lead">{{ curs.info }}</p>
+        <p class="lead" style="white-space: pre-line">{{ curs.dop_info }}</p>
+      </div>
+      <div class="col-md-5">
+          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto mt-5" width="500" height="500" src="{{ curs.img.url }}">
+      </div>
+</div>
+
+
+
+{% if ans %}
+    <p>Вы уже купили данный курс</p>
+
+{% else %}
+    {% if user.is_authenticated %}
+        <form method="post" class=" mb-1" style="max-width: 300px">
+            
+        <p class="lead"> Цена: {{ curs.price }}</p>
+         {% csrf_token %}
+       <button type="submit" class="btn btn-success">Купить курс</button>
+       </form>
+
+           
+    {% else %}
+        <button onclick="document.location='{% url 'login' %}?next={{request.path}}'" type="button" class="btn btn-warning" >Купить курс</button>
+    {% endif %}
+{% endif %}
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'main/base1.html' %}
+{% load static %}
+{% block title %}
+Мои курсы
+{% endblock %}
+
+{% block content %}
+<script> document.oncontextmenu = cmenu; function cmenu() { return false; } </script>
+
+<div class="container px-4 py-5" id="custom-cards">
+<h2 class="pb-2 border-bottom">Ваши курсы</h2>
+<div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+{% if cur %}
+    {% for les in curs %}
+
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('{{ les.img.url }}'); border: none">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h3 class="pt-5 mt-5 mb-4 display-7 lh-1 fw-bold" style="text-shadow: 1px 0 1px #0000, 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;"><a class="nav-link" href="{% url 'my_cur' les.id 0 %}">{{ les.name }}</a></h3>
+                <ul class="d-flex list-unstyled mt-auto">
+    {#              <li class="me-auto">#}
+    {#                <img src="{% static 'icon/icon1.png'%}" alt="Bootstrap" width="32" height="32" class="">#}
+    {#              </li>#}
+    {#              <li class="d-flex align-items-center">#}
+    {#                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>#}
+    {#                <small>3d</small>#}
+    {#              </li>#}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+    {% endfor %}
+{% else %}
+    <p class="lead">У вас нет курсов. <a href="{% url 'curs' %}">Приобретите их!</a> </p>
+{% endif %}
+</div>
+</div>
+
+
+
+{% endblock %}
