@@ -42,7 +42,7 @@ class RegistCreate(APIView):
                 password=serializer.validated_data['password1']
             )
             
-            return Response({'new_user': user.username}, status=status.HTTP_201_CREATED)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class CursList(generics.ListCreateAPIView):
@@ -63,8 +63,7 @@ def accounts(request):
     }
     for i in user.curss:
         context['curs_user'].append(user.curss[str(i)])
-
-    return render(request, 'main/account.html', context)
+    return context
 
 
 def registration(request):
